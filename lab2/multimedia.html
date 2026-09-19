@@ -8,11 +8,13 @@
     <style>
       .fotografias {
         display: flex;
-        grid-template-columns: repeat(4, 1fr);
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 15px;
+        max-width: 650px;
       }
       .fotografias img {
-        width: 100%;
+        width: 150px;
         aspect-ratio: 4/3;
         object-fit: cover;
         border-radius: 20px;
