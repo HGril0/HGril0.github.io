@@ -4,25 +4,30 @@ body {
   margin: 0;
   padding: 20px;
 }
+
 header, nav, img, main, footer {
   max-width: 900px;
   margin: 0 auto;
   display: block;
 }
+
 header {
   background-color: #d99c2b;
   color: white;
   text-align: center;
   padding: 25px 0;
 }
+
 header h1 {
   margin: 0;
 }
+
 nav {
   background-color: #4c6b46;
   text-align: center;
   padding: 12px 0;
 }
+
 nav a {
   color: white;
   text-decoration: none;
@@ -30,13 +35,16 @@ nav a {
   font-size: 14px;
   font-weight: bold;
 }
+
 nav a:hover {
   color: #d99c2b;
 }
+
 img {
   width: 100%;
   height: auto;
 }
+
 main {
   background-color: #fff;
   color: #333;
@@ -45,6 +53,7 @@ main {
   margin-bottom: 20px;
   box-sizing: border-box;
 }
+
 footer {
   background-color: #4c6b46;
   color: white;
