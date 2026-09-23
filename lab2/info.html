@@ -3,8 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>info</title>
     <link rel="stylesheet" href="../styles.css" />
+    <style>
+      table {
+        border-collapse: collapse;
+        margin-top: 15px;
+        margin-bottom: 20px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #999;
+        padding: 8px;
+      }
+      th {
+        color: #2c3e50;
+        background-color: #f4f4f4;
+      }
+      td {
+        color: #333333;
+      }
+      .valor {
+        color: #e74c3c;
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -13,7 +36,68 @@
       <a href="multimedia.html">Multimédia</a>
       <a href="info.html">Informação</a>
     </header>
-    <main></main>
+    <main>
+      <h2>Informações</h2>
+      <p>
+        Abaixo pode consultar os principais dados demográficos e geográficos da
+        cidade de Elvas, bem como descobrir alguns factos surpreendentes.
+      </p>
+      <table>
+        <tr>
+          <th rowspan="2">Demografia</th>
+          <td>População</td>
+          <td class="valor">20 753 hab. (2021)</td>
+        </tr>
+        <tr>
+          <td>Densidade populacional</td>
+          <td class="valor">32,9 hab./km²</td>
+        </tr>
+        <tr>
+          <th rowspan="3">Geografia</th>
+          <td>Área</td>
+          <td class="valor">631,29 km²</td>
+        </tr>
+        <tr>
+          <td>Região</td>
+          <td>Alentejo</td>
+        </tr>
+        <tr>
+          <td>País</td>
+          <td>Portugal</td>
+        </tr>
+        <tr>
+          <th>Website</th>
+          <td colspan="2">
+            <a href="http://www.cm-elvas.pt" target="_blank">www.cm-elvas.pt</a>
+          </td>
+        </tr>
+      </table>
+
+      <h3>5 Curiosidades sobre Elvas:</h3>
+      <ul>
+        <li>
+          Elvas é considerada a maior cidade fortaleza do mundo, listada em 2012
+          pela UNESCO como Património Mundial.
+        </li>
+        <li>
+          O imponente Aqueduto da Amoreira possui 843 arcos e levou quase 20
+          anos para ser concluído.
+        </li>
+        <li>
+          Em 1659, as suas fortificações tiveram um papel defensivo fulcral na
+          Batalha das Linhas de Elvas, que marcou o desfecho da Guerra da
+          Restauração.
+        </li>
+        <li>
+          A rua das Beatas traduz o espírito alentejano de maneira fiel, com o
+          seu chão em pedra, casinhas de cal e janelas coloridas.
+        </li>
+        <li>
+          A gastronomia local é muito rica, destacando-se o doce típico mais
+          famoso da região, a sericaia com ameixa de Elvas.
+        </li>
+      </ul>
+    </main>
     <footer>
       <p>DIW 2026</p>
     </footer>
