@@ -5,7 +5,11 @@ body {
   padding: 20px;
 }
 
-header, nav, img, main, footer {
+header,
+nav,
+img,
+main,
+footer {
   max-width: 900px;
   margin: 0 auto;
   display: block;
