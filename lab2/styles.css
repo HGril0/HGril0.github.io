@@ -1,0 +1,64 @@
+body {
+  background-color: #EAE6DF;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+header, nav, img, main, footer {
+  max-width: 900px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #D99C2B;
+  color: white;
+  text-align: center;
+  padding: 25px 0;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav {
+  background-color: #4C6B46;
+  text-align: center;
+  padding: 12px 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #D99C2B;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+main {
+  background-color: #FFFFFF;
+  color: #333333;
+  padding: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+footer {
+  background-color: #4C6B46;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 12px;
+}
