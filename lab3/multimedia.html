@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multimédia</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .fotografias {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+        max-width: 650px;
+      }
+      .fotografias img {
+        width: 150px;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Elvas</h1>
+      <nav>
+        <a href="index.html"> Home</a>
+        <a href="local.html">Localização</a>
+        <a href="multimedia.html">Multimédia</a>
+        <a href="info.html">Informação</a>
+      </nav>
+    </header>
+    <main>
+      <h2>Multimédia</h2>
+      <p>Nesta página encontra conteúdos multimédia.</p>
+      <p>
+        <a href="#fotografias">Fotografias</a>
+        <a href="#video">Vídeo</a>
+        <a href="#poema">Poema</a>
+      </p>
+      <section>
+        <h3>Fotografias</h3>
+        <div class="fotografias">
+          <img src="../images/Aqueduto2.jpg" alt="Aqueduto" />
+          <img src="../images/forte da graça.jpg" alt="Forte da Graça" />
+          <img src="../images/igreja4.jpg" alt="Igreja" />
+          <img src="../images/loveElvas.jpg" alt="Praça central" />
+          <img src="../images/muralhas5.png" alt="Muralhas" />
+          <img src="../images/muralhas.jpg" alt="Muralhas de cima" />
+          <img src="../images/Aqueduto.jpg" alt="Aqueduto" />
+          <img src="../images/elvas-fortress.jpg" alt="Frotaleza estrela" />
+        </div>
+      </section>
+      <section>
+        <h3>Vídeo</h3>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/cyeGaHcN034?si=fesOKxWhG7YiB7Fk&amp;controls=0"
+          title="YouTube video player"
+          allow="
+            accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+            web-share;
+          "
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </section>
+      <section>
+        <h3>Poesia</h3>
+        <div>
+          <p>
+            Elvas de pedra e memória,<br />
+            guardada por muralhas antigas,<br />
+            onde o Alentejo conta histórias<br />
+            ao som das ruas amigas.<br /><br />
+
+            O aqueduto toca o céu,<br />
+            com arcos cheios de encanto,<br />
+            e a cidade, junto à fronteira,<br />
+            guarda Portugal no seu canto.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>DIW 2026</p>
+    </footer>
+  </body>
+</html>
