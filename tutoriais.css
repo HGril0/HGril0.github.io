@@ -1,0 +1,116 @@
+/* Estilos exclusivos da página de tutoriais */
+body.pagina-tutoriais {
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #eae6df;
+  color: #333;
+}
+
+.pagina-tutoriais header,
+.pagina-tutoriais main,
+.pagina-tutoriais footer {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pagina-tutoriais header {
+  display: block;
+  padding: 25px;
+  background-color: #d99c2b;
+  color: white;
+  text-align: center;
+}
+
+.pagina-tutoriais header h1 {
+  margin: 0 0 20px;
+}
+
+.pagina-tutoriais nav {
+  position: static;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+
+  width: auto;
+  background: none;
+  border: 0;
+}
+
+.pagina-tutoriais nav a {
+  flex: none;
+  display: block;
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: white;
+  background-color: #4c6b46;
+  border: 0;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.pagina-tutoriais nav a:hover {
+  background-color: #3b5536;
+}
+
+.pagina-tutoriais main {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 30px;
+  background-color: white;
+}
+
+.pagina-tutoriais section {
+  margin-top: 40px;
+}
+
+.pagina-tutoriais .lista-tutoriais {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 25px;
+}
+
+.pagina-tutoriais .cartao-tutorial {
+  min-width: 0;
+  padding: 20px;
+  background-color: #eae6df;
+  border-radius: 12px;
+}
+
+.pagina-tutoriais .cartao-tutorial h3 {
+  margin: 0 0 20px;
+}
+
+.pagina-tutoriais .cartao-tutorial p {
+  line-height: 1.6;
+}
+
+.pagina-tutoriais .cartao-tutorial iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 0;
+}
+
+.pagina-tutoriais #videotutoriais iframe {
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+.pagina-tutoriais #codepens iframe {
+  height: 400px;
+}
+
+.pagina-tutoriais footer {
+  padding: 20px;
+  background-color: #4c6b46;
+  color: white;
+  text-align: center;
+}
+
+@media (min-width: 900px) {
+  .pagina-tutoriais .lista-tutoriais {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
