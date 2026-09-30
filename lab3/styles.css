@@ -441,3 +441,89 @@ table {
     align-items: start;
   }
 }
+/* ---------- Vídeo de fundo e parallax ---------- */
+
+/* Estrutura das duas novas secções */
+.pagina-multimedia .secao-video-fundo,
+.pagina-multimedia .secao-parallax {
+  min-height: 100vh;
+  padding: 40px 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  text-align: center;
+}
+
+/* Contentor do vídeo */
+.pagina-multimedia .secao-video-fundo {
+  position: relative;
+  overflow: hidden;
+  background-color: #4c6b46;
+}
+
+/* Vídeo a preencher o fundo */
+.pagina-multimedia .video-fundo {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Texto sobre o vídeo e o fundo parallax */
+.pagina-multimedia .texto-efeito {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 650px;
+  padding: 30px;
+
+  background-color: rgba(0, 0, 0, 0.55);
+  border-radius: 12px;
+}
+
+.pagina-multimedia .texto-efeito h3 {
+  margin: 0 0 15px;
+  font-size: 2rem;
+}
+
+.pagina-multimedia .texto-efeito p {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Imagem de fundo com efeito parallax */
+.pagina-multimedia .secao-parallax {
+  background-color: #4c6b46;
+  background-image: url("../images/elvas-fortress.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Ajustes para telemóvel */
+@media (max-width: 767px) {
+  .pagina-multimedia .secao-parallax {
+    background-attachment: scroll;
+  }
+
+  .pagina-multimedia .texto-efeito {
+    padding: 25px 20px;
+  }
+
+  .pagina-multimedia .texto-efeito h3 {
+    font-size: 1.6rem;
+  }
+
+  .pagina-multimedia .texto-efeito p {
+    font-size: 1rem;
+  }
+}
