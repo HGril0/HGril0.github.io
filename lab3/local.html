@@ -10,37 +10,41 @@
     <header>
       <h1>Elvas</h1>
       <nav>
-        <a href="index.html" class="ativo"><span class="icone">🏠</span>Home</a>
-        <a href="local.html"><span class="icone">📍</span>Localização</a>
+        <a href="index.html" class="icone"><span class="icone">🏠</span>Home</a>
+        <a href="local.html"><span class="ativo">📍</span>Localização</a>
         <a href="multimedia.html"><span class="icone">🖼️</span>Multimédia</a>
         <a href="info.html"><span class="icone">ℹ️</span>Informação</a>
       </nav>
     </header>
     <main>
       <h2>Localização</h2>
+
       <img
         src="../images/ElvasColagem.jpg"
-        alt="Colagem Elvas"
+        alt="Colagem de Elvas"
         width="350"
         height="350"
       />
-      <p>
-        Elvas é uma cidade localizada no Alto Alentejo, junto à fronteira com
-        Espanha. Destaca-se pelas suas muralhas, fortes e pelo Aqueduto da
-        Amoreira, que refletem a importância histórica da cidade na defesa de
-        Portugal.
-      </p>
-      <p>
+
+      <div class="localizacao-conteudo">
+        <p class="localizacao-texto">
+          Elvas é uma cidade localizada no Alto Alentejo, junto à fronteira com
+          Espanha. Destaca-se pelas suas muralhas, fortes e pelo Aqueduto da
+          Amoreira, que refletem a importância histórica da cidade na defesa de
+          Portugal.
+        </p>
+
         <iframe
-          title="Mapa Elvas"
+          class="mapa"
+          title="Mapa de Elvas"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99343.22465466638!2d-7.124999661337232!3d38.913101753610825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd171d0e02cc9ef3%3A0xbd0a2e30d4f32fca!2sElvas!5e0!3m2!1spt-PT!2spt!4v1789680693501!5m2!1spt-PT!2spt"
           width="500"
           height="450"
-          allowfullscreen="true"
-          loading="eager"
+          allowfullscreen
+          loading="lazy"
           referrerpolicy="strict-origin-when-cross-origin"
         ></iframe>
-      </p>
+      </div>
     </main>
     <footer>
       <p>DIW 2026</p>

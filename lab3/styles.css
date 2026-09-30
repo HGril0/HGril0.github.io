@@ -276,3 +276,168 @@ table {
     display: none;
   }
 }
+/* ---------- Página de localização ---------- */
+
+/* Telemóvel: texto por cima do mapa */
+.localizacao-conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.localizacao-texto {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.localizacao-conteudo iframe.mapa {
+  display: block;
+  width: 100%;
+  max-width: none;
+  border: 0;
+}
+
+/* PC: texto ao lado do mapa */
+@media (min-width: 768px) {
+  .localizacao-conteudo {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .localizacao-texto {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .localizacao-conteudo iframe.mapa {
+    flex: 1;
+    min-width: 0;
+  }
+}
+/* ---------- Página de informações ---------- */
+
+/* Telemóvel: uma coluna */
+.informacoes-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "dados"
+    "imagem1"
+    "curiosidades"
+    "imagem2";
+
+  gap: 25px;
+  margin-top: 30px;
+}
+
+/* Posições dos elementos */
+.info-dados {
+  grid-area: dados;
+  min-width: 0;
+  overflow-x: auto;
+}
+
+.info-curiosidades {
+  grid-area: curiosidades;
+  min-width: 0;
+}
+
+.info-imagem-1 {
+  grid-area: imagem1;
+}
+
+.info-imagem-2 {
+  grid-area: imagem2;
+}
+
+/* Blocos de texto */
+.info-dados,
+.info-curiosidades {
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.info-dados {
+  background-color: #eae6df;
+}
+
+.info-curiosidades {
+  background-color: #4c6b46;
+  color: white;
+}
+
+.informacoes-grid h3 {
+  margin: 0 0 15px;
+}
+
+.info-curiosidades ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.info-curiosidades li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+/* Imagens */
+.informacoes-grid figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.informacoes-grid figure img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.informacoes-grid figcaption {
+  padding-top: 10px;
+  color: #4c6b46;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Tabela: estilos apenas deste bloco */
+.info-dados table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0 0;
+}
+
+.info-dados th,
+.info-dados td {
+  border: 1px solid #999;
+  padding: 8px;
+}
+
+.info-dados th {
+  color: #2c3e50;
+  background-color: #f4f4f4;
+}
+
+.info-dados td {
+  color: #333;
+}
+
+.info-dados .valor {
+  color: #a33b20;
+  font-weight: bold;
+}
+
+/* PC: três colunas e uma posição vazia */
+@media (min-width: 768px) {
+  .informacoes-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    grid-template-areas:
+      "dados dados imagem1"
+      "imagem2 . curiosidades";
+
+    align-items: start;
+  }
+}
