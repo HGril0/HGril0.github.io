@@ -6,27 +6,20 @@
     <title>Multimédia</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <body class="pagina-multimedia">
+  <body class="pagina-multimedia">
     <header>
       <h1>Elvas</h1>
       <nav>
-  <a href="index.html">
-    <span class="icone">🏠</span>Home
-  </a>
+        <a href="index.html"> <span class="icone">🏠</span>Home </a>
 
-  <a href="local.html">
-    <span class="icone">📍</span>Localização
-  </a>
+        <a href="local.html"> <span class="icone">📍</span>Localização </a>
 
-  <a href="multimedia.html" class="ativo">
-    <span class="icone">🖼️</span>Multimédia
-  </a>
+        <a href="multimedia.html" class="ativo">
+          <span class="icone">🖼️</span>Multimédia
+        </a>
 
-  <a href="info.html">
-    <span class="icone">ℹ️</span>Informação
-  </a>
-</nav>
+        <a href="info.html"> <span class="icone">ℹ️</span>Informação </a>
+      </nav>
     </header>
     <main>
       <div class="introducao-multimedia">
@@ -37,6 +30,8 @@
           <a href="#fotografias">Fotografias</a>
           <a href="#video">Vídeo</a>
           <a href="#poema">Poema</a>
+          <a href="#video-fundo">Vídeo de fundo</a>
+          <a href="#parallax">Parallax</a>
         </p>
       </div>
 
@@ -109,6 +104,42 @@
             e a cidade, junto à fronteira,<br />
             guarda Portugal no seu canto.
           </p>
+        </div>
+      </section>
+      <!-- Vídeo como fundo -->
+      <section
+        id="video-fundo"
+        class="secao-video-fundo"
+        aria-labelledby="titulo-video-fundo"
+      >
+        <video
+          class="video-fundo"
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="../images/elvas-fortress.jpg"
+          aria-hidden="true"
+        >
+          <source src="CeuMontanhas.mp4" type="video/mp4" />
+          O seu navegador não suporta vídeos HTML.
+        </video>
+
+        <div class="texto-efeito">
+          <h3 id="titulo-video-fundo">Descobrir Elvas</h3>
+          <p>Uma cidade para explorar, uma história para descobrir.</p>
+        </div>
+      </section>
+
+      <!-- Efeito parallax -->
+      <section
+        id="parallax"
+        class="secao-parallax"
+        aria-labelledby="titulo-parallax"
+      >
+        <div class="texto-efeito">
+          <h3 id="titulo-parallax">Uma cidade com história</h3>
+          <p>Entre muralhas e paisagens, Elvas convida a parar.</p>
         </div>
       </section>
     </main>
