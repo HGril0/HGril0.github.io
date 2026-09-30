@@ -1,11 +1,13 @@
 * {
   box-sizing: border-box;
+}
 
 body {
   background-color: #eae6df;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px 20px 90px;
+}
 
 header,
 main,
@@ -81,6 +83,7 @@ img {
 main > img {
   display: block;
   width: 100%;
+}
 
 iframe {
   max-width: 100%;
@@ -119,6 +122,7 @@ table {
 
   nav {
     position: static;
+    width: auto;
     background: none;
     border-top: none;
   }
@@ -129,6 +133,7 @@ table {
     padding: 25px 14px;
     font-size: 14px;
     border-bottom: 3px solid transparent;
+  }
 
   nav a:hover,
   nav a.ativo {
