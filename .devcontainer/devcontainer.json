@@ -34,5 +34,8 @@
   "forwardPorts": [3000],
   "portsAttributes": {
     "3000": { "label": "Live Preview", "onAutoForward": "notify" }
+  },
+  "features": {
+    "ghcr.io/postfinance/devcontainer-features/node:1": {}
   }
 }
