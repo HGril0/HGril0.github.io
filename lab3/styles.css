@@ -1,13 +1,13 @@
+* {
+  box-sizing: border-box;
+
 body {
   background-color: #eae6df;
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 20px;
-}
+  padding: 20px 20px 90px;
 
 header,
-nav,
-img,
 main,
 footer {
   max-width: 900px;
@@ -26,36 +26,12 @@ header h1 {
   margin: 0;
 }
 
-nav {
-  background-color: #4c6b46;
-  text-align: center;
-  padding: 12px 0;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-nav a:hover {
-  color: #d99c2b;
-}
-
-img {
-  width: 100%;
-  height: auto;
-}
-
 main {
   background-color: #fff;
   color: #333;
   padding: 30px;
   margin-top: 20px;
   margin-bottom: 20px;
-  box-sizing: border-box;
 }
 
 footer {
@@ -64,4 +40,103 @@ footer {
   text-align: center;
   padding: 15px 0;
   font-size: 12px;
+}
+
+nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  background-color: #4c6b46;
+  border-top: 3px solid #d99c2b;
+  z-index: 10;
+}
+
+nav a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 4px;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+nav a.ativo {
+  background-color: #3b5536;
+}
+
+.icone {
+  font-size: 22px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+main > img {
+  display: block;
+  width: 100%;
+
+iframe {
+  max-width: 100%;
+}
+
+iframe.video {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+iframe.mapa {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  aspect-ratio: 10 / 9;
+}
+
+table {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    text-align: left;
+  }
+
+  nav {
+    position: static;
+    background: none;
+    border-top: none;
+  }
+
+  nav a {
+    flex: none;
+    flex-direction: row;
+    padding: 25px 14px;
+    font-size: 14px;
+    border-bottom: 3px solid transparent;
+
+  nav a:hover,
+  nav a.ativo {
+    background: none;
+    border-bottom-color: #4c6b46;
+  }
+
+  .icone {
+    display: none;
+  }
 }
