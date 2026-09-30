@@ -1,88 +1,6 @@
 * {
   box-sizing: border-box;
 }
-body.pagina-multimedia {
-  padding: 20px 0 90px;
-}
-.pagina-multimedia main {
-  max-width: none;
-  padding: 0;
-}
-.pagina-multimedia .introducao-multimedia {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 30px;
-  text-align: center;
-}
-
-.pagina-multimedia .introducao-multimedia a {
-  display: inline-block;
-  margin: 5px 10px;
-  color: #4c6b46;
-}
-.pagina-multimedia .secao-multimedia {
-  min-height: 100vh;
-  padding: 40px 20px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  text-align: center;
-}
-.pagina-multimedia #fotografias {
-  background-color: #eae6df;
-  color: #333;
-}
-
-.pagina-multimedia #video {
-  background-color: #d99c2b;
-  color: #222;
-}
-
-.pagina-multimedia #poema {
-  background-color: #4c6b46;
-  color: white;
-}
-.pagina-multimedia .secao-multimedia h3 {
-  margin: 0 0 30px;
-  font-size: 2rem;
-}
-.pagina-multimedia .fotografias {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-
-  width: 100%;
-  max-width: 650px;
-}
-
-.pagina-multimedia .fotografias img {
-  width: 150px;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: 20px;
-
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.pagina-multimedia .fotografias img:hover {
-  transform: scale(1.08);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-.pagina-multimedia .foto-emblematica {
-  position: relative;
-  height: 100vh;
-}
-
-.pagina-multimedia .foto-emblematica img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
 body {
   background-color: #eae6df;
@@ -135,38 +53,6 @@ nav {
   background-color: #4c6b46;
   border-top: 3px solid #d99c2b;
   z-index: 10;
-}
-.pagina-multimedia .frase-emblematica {
-  position: absolute;
-  left: 5%;
-  bottom: 10%;
-
-  max-width: 90%;
-  margin: 0;
-  padding: 15px 20px;
-
-  font-size: 4vw;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.55);
-  border-radius: 10px;
-}
-/* Vídeo */
-.pagina-multimedia iframe.video-elvas {
-  width: 100%;
-  max-width: 800px;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  border: 0;
-}
-
-/* Poema */
-.pagina-multimedia .poema {
-  font-size: 1.2rem;
-  line-height: 1.8;
-}
-
-.pagina-multimedia .poema p {
-  margin: 0 0 25px;
 }
 
 nav a {
@@ -221,7 +107,300 @@ table {
   width: 100%;
 }
 
-@media (max-width: 767px) {
+.localizacao-conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.localizacao-texto {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.localizacao-conteudo iframe.mapa {
+  display: block;
+  width: 100%;
+  max-width: none;
+  border: 0;
+}
+
+.informacoes-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "dados"
+    "imagem1"
+    "curiosidades"
+    "imagem2";
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.info-dados,
+.info-curiosidades {
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.info-dados {
+  grid-area: dados;
+  min-width: 0;
+  overflow-x: auto;
+  background-color: #eae6df;
+}
+
+.info-curiosidades {
+  grid-area: curiosidades;
+  min-width: 0;
+  background-color: #4c6b46;
+  color: white;
+}
+
+.info-imagem-1 {
+  grid-area: imagem1;
+}
+
+.info-imagem-2 {
+  grid-area: imagem2;
+}
+
+.informacoes-grid h3 {
+  margin: 0 0 15px;
+}
+
+.info-curiosidades ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.info-curiosidades li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.informacoes-grid figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.informacoes-grid figure img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.informacoes-grid figcaption {
+  padding-top: 10px;
+  color: #4c6b46;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.info-dados table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0 0;
+}
+
+.info-dados th,
+.info-dados td {
+  border: 1px solid #999;
+  padding: 8px;
+}
+
+.info-dados th {
+  color: #2c3e50;
+  background-color: #f4f4f4;
+}
+
+.info-dados td {
+  color: #333;
+}
+
+.info-dados .valor {
+  color: #a33b20;
+  font-weight: bold;
+}
+
+body.pagina-multimedia {
+  padding: 20px 0 90px;
+}
+
+.pagina-multimedia main {
+  max-width: none;
+  padding: 0;
+}
+
+.pagina-multimedia .introducao-multimedia {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+  text-align: center;
+}
+
+.pagina-multimedia .introducao-multimedia a {
+  display: inline-block;
+  margin: 5px 10px;
+  color: #4c6b46;
+}
+
+.pagina-multimedia .secao-multimedia {
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.pagina-multimedia #fotografias {
+  background-color: #eae6df;
+  color: #333;
+}
+
+.pagina-multimedia #video {
+  background-color: #d99c2b;
+  color: #222;
+}
+
+.pagina-multimedia #poema {
+  background-color: #4c6b46;
+  color: white;
+}
+
+.pagina-multimedia .secao-multimedia h3 {
+  margin: 0 0 30px;
+  font-size: 2rem;
+}
+
+.pagina-multimedia .fotografias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 650px;
+}
+
+.pagina-multimedia .fotografias img {
+  width: 150px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 20px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.pagina-multimedia .foto-emblematica {
+  position: relative;
+  height: 100vh;
+}
+
+.pagina-multimedia .foto-emblematica img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pagina-multimedia .fotografias img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgb(0 0 0 / 30%);
+}
+
+.pagina-multimedia .frase-emblematica {
+  position: absolute;
+  left: 5%;
+  bottom: 10%;
+  max-width: 90%;
+  margin: 0;
+  padding: 15px 20px;
+  font-size: 4vw;
+  color: white;
+  background-color: rgb(0 0 0 / 55%);
+  border-radius: 10px;
+}
+
+.pagina-multimedia iframe.video-elvas {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+.pagina-multimedia .poema {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.pagina-multimedia .poema p {
+  margin: 0 0 25px;
+}
+
+.pagina-multimedia .secao-video-fundo,
+.pagina-multimedia .secao-parallax {
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.pagina-multimedia .secao-video-fundo {
+  position: relative;
+  overflow: hidden;
+  background-color: #4c6b46;
+}
+
+.pagina-multimedia .video-fundo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pagina-multimedia .texto-efeito {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 650px;
+  padding: 30px;
+  background-color: rgb(0 0 0 / 55%);
+  border-radius: 12px;
+}
+
+.pagina-multimedia .texto-efeito h3 {
+  margin: 0 0 15px;
+  font-size: 2rem;
+}
+
+.pagina-multimedia .texto-efeito p {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.pagina-multimedia .secao-parallax {
+  background-color: #4c6b46;
+  background-image: url("../images/AquedutoCapa.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@media (width <= 767px) {
   .pagina-multimedia .secao-multimedia {
     padding-bottom: 100px;
   }
@@ -233,8 +412,25 @@ table {
   .pagina-multimedia .poema {
     font-size: 1rem;
   }
+
+  .pagina-multimedia .secao-parallax {
+    background-attachment: scroll;
+  }
+
+  .pagina-multimedia .texto-efeito {
+    padding: 25px 20px;
+  }
+
+  .pagina-multimedia .texto-efeito h3 {
+    font-size: 1.6rem;
+  }
+
+  .pagina-multimedia .texto-efeito p {
+    font-size: 1rem;
+  }
 }
-@media (min-width: 768px) {
+
+@media (width >= 768px) {
   body {
     padding: 20px;
   }
@@ -275,31 +471,7 @@ table {
   .icone {
     display: none;
   }
-}
-/* ---------- Página de localização ---------- */
 
-/* Telemóvel: texto por cima do mapa */
-.localizacao-conteudo {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  margin-top: 30px;
-}
-
-.localizacao-texto {
-  margin: 0;
-  line-height: 1.7;
-}
-
-.localizacao-conteudo iframe.mapa {
-  display: block;
-  width: 100%;
-  max-width: none;
-  border: 0;
-}
-
-/* PC: texto ao lado do mapa */
-@media (min-width: 768px) {
   .localizacao-conteudo {
     flex-direction: row;
     align-items: center;
@@ -314,216 +486,12 @@ table {
     flex: 1;
     min-width: 0;
   }
-}
-/* ---------- Página de informações ---------- */
 
-/* Telemóvel: uma coluna */
-.informacoes-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  grid-template-areas:
-    "dados"
-    "imagem1"
-    "curiosidades"
-    "imagem2";
-
-  gap: 25px;
-  margin-top: 30px;
-}
-
-/* Posições dos elementos */
-.info-dados {
-  grid-area: dados;
-  min-width: 0;
-  overflow-x: auto;
-}
-
-.info-curiosidades {
-  grid-area: curiosidades;
-  min-width: 0;
-}
-
-.info-imagem-1 {
-  grid-area: imagem1;
-}
-
-.info-imagem-2 {
-  grid-area: imagem2;
-}
-
-/* Blocos de texto */
-.info-dados,
-.info-curiosidades {
-  padding: 20px;
-  border-radius: 12px;
-}
-
-.info-dados {
-  background-color: #eae6df;
-}
-
-.info-curiosidades {
-  background-color: #4c6b46;
-  color: white;
-}
-
-.informacoes-grid h3 {
-  margin: 0 0 15px;
-}
-
-.info-curiosidades ul {
-  margin: 0;
-  padding-left: 20px;
-}
-
-.info-curiosidades li {
-  margin-bottom: 12px;
-  line-height: 1.6;
-}
-
-/* Imagens */
-.informacoes-grid figure {
-  min-width: 0;
-  margin: 0;
-}
-
-.informacoes-grid figure img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-.informacoes-grid figcaption {
-  padding-top: 10px;
-  color: #4c6b46;
-  font-size: 0.9rem;
-  text-align: center;
-}
-
-/* Tabela: estilos apenas deste bloco */
-.info-dados table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 15px 0 0;
-}
-
-.info-dados th,
-.info-dados td {
-  border: 1px solid #999;
-  padding: 8px;
-}
-
-.info-dados th {
-  color: #2c3e50;
-  background-color: #f4f4f4;
-}
-
-.info-dados td {
-  color: #333;
-}
-
-.info-dados .valor {
-  color: #a33b20;
-  font-weight: bold;
-}
-
-/* PC: três colunas e uma posição vazia */
-@media (min-width: 768px) {
   .informacoes-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-
     grid-template-areas:
       "dados dados imagem1"
       "imagem2 . curiosidades";
-
     align-items: start;
-  }
-}
-/* ---------- Vídeo de fundo e parallax ---------- */
-
-/* Estrutura das duas novas secções */
-.pagina-multimedia .secao-video-fundo,
-.pagina-multimedia .secao-parallax {
-  min-height: 100vh;
-  padding: 40px 20px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  color: white;
-  text-align: center;
-}
-
-/* Contentor do vídeo */
-.pagina-multimedia .secao-video-fundo {
-  position: relative;
-  overflow: hidden;
-  background-color: #4c6b46;
-}
-
-/* Vídeo a preencher o fundo */
-.pagina-multimedia .video-fundo {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Texto sobre o vídeo e o fundo parallax */
-.pagina-multimedia .texto-efeito {
-  position: relative;
-  z-index: 1;
-
-  width: 100%;
-  max-width: 650px;
-  padding: 30px;
-
-  background-color: rgba(0, 0, 0, 0.55);
-  border-radius: 12px;
-}
-
-.pagina-multimedia .texto-efeito h3 {
-  margin: 0 0 15px;
-  font-size: 2rem;
-}
-
-.pagina-multimedia .texto-efeito p {
-  margin: 0;
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-
-/* Imagem de fundo com efeito parallax */
-.pagina-multimedia .secao-parallax {
-  background-color: #4c6b46;
-  background-image: url("../images/elvas-fortress.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
-/* Ajustes para telemóvel */
-@media (max-width: 767px) {
-  .pagina-multimedia .secao-parallax {
-    background-attachment: scroll;
-  }
-
-  .pagina-multimedia .texto-efeito {
-    padding: 25px 20px;
-  }
-
-  .pagina-multimedia .texto-efeito h3 {
-    font-size: 1.6rem;
-  }
-
-  .pagina-multimedia .texto-efeito p {
-    font-size: 1rem;
   }
 }

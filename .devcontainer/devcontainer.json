@@ -36,6 +36,7 @@
     "3000": { "label": "Live Preview", "onAutoForward": "notify" }
   },
   "features": {
-    "ghcr.io/postfinance/devcontainer-features/node:1": {}
+    "ghcr.io/postfinance/devcontainer-features/node:1": {},
+    "ghcr.io/stu-bell/devcontainer-features/node:0": {}
   }
 }
