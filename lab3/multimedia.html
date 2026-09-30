@@ -5,60 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Multimédia</title>
     <link rel="stylesheet" href="styles.css" />
-    <style>
-      .fotografias {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 15px;
-        max-width: 650px;
-      }
-      .fotografias img {
-        width: 150px;
-        aspect-ratio: 4/3;
-        object-fit: cover;
-        border-radius: 20px;
-      }
-    </style>
   </head>
   <body>
+    <body class="pagina-multimedia">
     <header>
       <h1>Elvas</h1>
       <nav>
-        <a href="index.html" class="ativo"><span class="icone">🏠</span>Home</a>
-        <a href="local.html"><span class="icone">📍</span>Localização</a>
-        <a href="multimedia.html"><span class="icone">🖼️</span>Multimédia</a>
-        <a href="info.html"><span class="icone">ℹ️</span>Informação</a>
-      </nav>
+  <a href="index.html">
+    <span class="icone">🏠</span>Home
+  </a>
+
+  <a href="local.html">
+    <span class="icone">📍</span>Localização
+  </a>
+
+  <a href="multimedia.html" class="ativo">
+    <span class="icone">🖼️</span>Multimédia
+  </a>
+
+  <a href="info.html">
+    <span class="icone">ℹ️</span>Informação
+  </a>
+</nav>
     </header>
     <main>
-      <h2>Multimédia</h2>
-      <p>Nesta página encontra conteúdos multimédia.</p>
-      <p>
-        <a href="#fotografias">Fotografias</a>
-        <a href="#video">Vídeo</a>
-        <a href="#poema">Poema</a>
-      </p>
-      <section>
+      <div class="introducao-multimedia">
+        <h2>Multimédia</h2>
+        <p>Nesta página encontra conteúdos multimédia.</p>
+
+        <p>
+          <a href="#fotografias">Fotografias</a>
+          <a href="#video">Vídeo</a>
+          <a href="#poema">Poema</a>
+        </p>
+      </div>
+
+      <section id="fotografias" class="secao-multimedia">
         <h3>Fotografias</h3>
+
         <div class="fotografias">
           <img src="../images/Aqueduto2.jpg" alt="Aqueduto" />
           <img src="../images/forte da graça.jpg" alt="Forte da Graça" />
           <img src="../images/igreja4.jpg" alt="Igreja" />
           <img src="../images/loveElvas.jpg" alt="Praça central" />
           <img src="../images/muralhas5.png" alt="Muralhas" />
-          <img src="../images/muralhas.jpg" alt="Muralhas de cima" />
+          <img src="../images/muralhas.jpg" alt="Muralhas vistas de cima" />
           <img src="../images/Aqueduto.jpg" alt="Aqueduto" />
-          <img src="../images/elvas-fortress.jpg" alt="Frotaleza estrela" />
+          <img src="../images/elvas-fortress.jpg" alt="Fortaleza em estrela" />
         </div>
       </section>
-      <section>
+
+      <section
+        class="foto-emblematica"
+        aria-label="Fotografia emblemática de Elvas"
+      >
+        <img
+          src="../images/elvas-fortress.jpg"
+          alt="Vista da fortaleza em estrela de Elvas"
+        />
+
+        <p class="frase-emblematica">
+          Elvas, onde a história toca o horizonte.
+        </p>
+      </section>
+
+      <section id="video" class="secao-multimedia">
         <h3>Vídeo</h3>
+
         <iframe
+          class="video-elvas"
           width="560"
           height="315"
-          src="https://www.youtube.com/embed/cyeGaHcN034?si=fesOKxWhG7YiB7Fk&amp;controls=0"
-          title="YouTube video player"
+          src="https://www.youtube.com/embed/cyeGaHcN034?controls=0"
+          title="Vídeo sobre Elvas"
           allow="
             accelerometer;
             autoplay;
@@ -72,15 +91,19 @@
           allowfullscreen
         ></iframe>
       </section>
-      <section>
+
+      <section id="poema" class="secao-multimedia">
         <h3>Poesia</h3>
-        <div>
+
+        <div class="poema">
           <p>
             Elvas de pedra e memória,<br />
             guardada por muralhas antigas,<br />
             onde o Alentejo conta histórias<br />
-            ao som das ruas amigas.<br /><br />
+            ao som das ruas amigas.
+          </p>
 
+          <p>
             O aqueduto toca o céu,<br />
             com arcos cheios de encanto,<br />
             e a cidade, junto à fronteira,<br />

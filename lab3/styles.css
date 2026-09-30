@@ -1,6 +1,88 @@
 * {
   box-sizing: border-box;
 }
+body.pagina-multimedia {
+  padding: 20px 0 90px;
+}
+.pagina-multimedia main {
+  max-width: none;
+  padding: 0;
+}
+.pagina-multimedia .introducao-multimedia {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+  text-align: center;
+}
+
+.pagina-multimedia .introducao-multimedia a {
+  display: inline-block;
+  margin: 5px 10px;
+  color: #4c6b46;
+}
+.pagina-multimedia .secao-multimedia {
+  min-height: 100vh;
+  padding: 40px 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+.pagina-multimedia #fotografias {
+  background-color: #eae6df;
+  color: #333;
+}
+
+.pagina-multimedia #video {
+  background-color: #d99c2b;
+  color: #222;
+}
+
+.pagina-multimedia #poema {
+  background-color: #4c6b46;
+  color: white;
+}
+.pagina-multimedia .secao-multimedia h3 {
+  margin: 0 0 30px;
+  font-size: 2rem;
+}
+.pagina-multimedia .fotografias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+
+  width: 100%;
+  max-width: 650px;
+}
+
+.pagina-multimedia .fotografias img {
+  width: 150px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 20px;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pagina-multimedia .fotografias img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+.pagina-multimedia .foto-emblematica {
+  position: relative;
+  height: 100vh;
+}
+
+.pagina-multimedia .foto-emblematica img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 body {
   background-color: #eae6df;
@@ -53,6 +135,38 @@ nav {
   background-color: #4c6b46;
   border-top: 3px solid #d99c2b;
   z-index: 10;
+}
+.pagina-multimedia .frase-emblematica {
+  position: absolute;
+  left: 5%;
+  bottom: 10%;
+
+  max-width: 90%;
+  margin: 0;
+  padding: 15px 20px;
+
+  font-size: 4vw;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.55);
+  border-radius: 10px;
+}
+/* Vídeo */
+.pagina-multimedia iframe.video-elvas {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+/* Poema */
+.pagina-multimedia .poema {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.pagina-multimedia .poema p {
+  margin: 0 0 25px;
 }
 
 nav a {
@@ -107,9 +221,26 @@ table {
   width: 100%;
 }
 
+@media (max-width: 767px) {
+  .pagina-multimedia .secao-multimedia {
+    padding-bottom: 100px;
+  }
+
+  .pagina-multimedia .frase-emblematica {
+    font-size: 6vw;
+  }
+
+  .pagina-multimedia .poema {
+    font-size: 1rem;
+  }
+}
 @media (min-width: 768px) {
   body {
     padding: 20px;
+  }
+
+  body.pagina-multimedia {
+    padding: 20px 0;
   }
 
   header {
