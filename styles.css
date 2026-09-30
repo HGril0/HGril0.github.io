@@ -10,7 +10,7 @@ section {
   min-height: 100vh; /* ocupa no mínimo 100% da altura do ecrã */
 }
 #inicio {
-  background-image: url("images/hero.jpg");
+  background-image: url("images/heroBackground.jpg");
   background-size: cover;      /* a imagem cobre o elemento todo, sem repetir */
   background-position: center; /* centra a imagem */
   position: relative;          /* ponto de referência para posicionar o texto lá dentro */
