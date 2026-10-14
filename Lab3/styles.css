@@ -1,0 +1,402 @@
+/* ===== Cores ===== */
+:root {
+  --bege: #eae6df;
+  --dourado: #d99c2b;
+  --verde: #4c6b46;
+  --verde-escuro: #3b5536;
+  --texto: #333;
+  --sombra: rgb(0 0 0 / 55%);
+}
+
+/* ===== Base ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px 20px 90px; /* espaço para o menu fixo em baixo */
+  background-color: var(--bege);
+  font-family: Arial, sans-serif;
+  color: var(--texto);
+}
+
+img,
+iframe {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+/* ===== Header / Main / Footer ===== */
+header,
+main,
+footer {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+header {
+  padding: 25px 0;
+  background-color: var(--dourado);
+  color: white;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+main {
+  margin: 20px auto;
+  padding: 30px;
+  background-color: white;
+}
+
+main > img {
+  display: block;
+  width: 100%;
+}
+
+footer {
+  padding: 15px 0;
+  background-color: var(--verde);
+  color: white;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* ===== Menu (mobile: barra fixa em baixo) ===== */
+nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  width: 100%;
+  background-color: var(--verde);
+  border-top: 3px solid var(--dourado);
+}
+
+nav a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 4px;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+nav a.ativo {
+  background-color: var(--verde-escuro);
+}
+
+.icone {
+  font-size: 22px;
+}
+
+/* ===== Localização ===== */
+.localizacao-conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.localizacao-texto {
+  margin: 0;
+  line-height: 1.7;
+}
+
+iframe.mapa {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 10 / 9;
+  border: 0;
+}
+
+/* ===== Informação ===== */
+.informacoes-grid {
+  display: grid;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.informacoes-grid > * {
+  min-width: 0;
+  margin: 0;
+}
+
+.informacoes-grid h3 {
+  margin: 0 0 15px;
+}
+
+.info-dados,
+.info-curiosidades {
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.info-dados {
+  overflow-x: auto;
+  background-color: var(--bege);
+}
+
+.info-curiosidades {
+  background-color: var(--verde);
+  color: white;
+}
+
+.info-curiosidades li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.informacoes-grid figure img {
+  display: block;
+  width: 120px; /* tamanho real da foto: maior fica pixelizada */
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.informacoes-grid figcaption {
+  padding-top: 10px;
+  color: var(--verde);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  margin-top: 15px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px;
+  border: 1px solid #999;
+}
+
+th {
+  background-color: #f4f4f4;
+  color: #2c3e50;
+}
+
+.valor {
+  color: #a33b20;
+  font-weight: bold;
+}
+
+/* ===== Multimédia ===== */
+.pagina-multimedia {
+  padding: 20px 0 90px; /* secções ocupam a largura toda */
+}
+
+.pagina-multimedia main {
+  max-width: none;
+  padding: 0;
+}
+
+.introducao-multimedia {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+  text-align: center;
+}
+
+.introducao-multimedia a {
+  margin: 0 10px;
+  color: var(--verde);
+}
+
+/* Todas as secções de ecrã inteiro partilham o mesmo layout */
+.secao {
+  position: relative;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  text-align: center;
+}
+
+.secao h3 {
+  margin: 0 0 30px;
+  font-size: 2rem;
+}
+
+#fotografias {
+  background-color: var(--bege);
+}
+
+#video {
+  background-color: var(--dourado);
+}
+
+#poema,
+#video-fundo {
+  background-color: var(--verde);
+  color: white;
+}
+
+/* Fotografias */
+.fotografias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  max-width: 650px;
+}
+
+.fotografias img {
+  width: 120px; /* tamanho real das fotos (120x80) */
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.fotografias img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgb(0 0 0 / 30%);
+}
+
+/* Foto emblemática: foto no tamanho real com a frase por baixo */
+.foto-emblematica {
+  padding: 60px 20px;
+  background-color: var(--verde);
+  text-align: center;
+}
+
+.foto-emblematica img {
+  width: 120px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 30%);
+}
+
+.frase-emblematica {
+  margin: 25px 0 0;
+  color: white;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+/* Vídeo YouTube */
+iframe.video-elvas {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+/* Poema */
+.poema {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+/* Vídeo de fundo */
+.video-fundo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Caixa de texto por cima do vídeo / parallax */
+.texto-efeito {
+  position: relative; /* fica por cima do vídeo */
+  max-width: 650px;
+  padding: 30px;
+  background-color: var(--sombra);
+  border-radius: 12px;
+  color: white;
+}
+
+.texto-efeito h3 {
+  margin-bottom: 15px;
+}
+
+.texto-efeito p {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Parallax: a imagem fica parada e o conteúdo desliza por cima.
+   Usa uma versão recortada da capa, sem o texto escrito na foto. */
+.parallax {
+  background-image: url("../images/AquedutoParallax.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* ===== Desktop ===== */
+@media (width >= 768px) {
+  body,
+  .pagina-multimedia {
+    padding-bottom: 20px; /* o menu deixa de estar fixo em baixo */
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+  }
+
+  nav {
+    position: static;
+    width: auto;
+    background: none;
+    border: none;
+  }
+
+  nav a {
+    flex-direction: row;
+    padding: 25px 14px;
+    font-size: 14px;
+    border-bottom: 3px solid transparent;
+  }
+
+  nav a:hover,
+  nav a.ativo {
+    background: none;
+    border-bottom-color: var(--verde);
+  }
+
+  .icone {
+    display: none;
+  }
+
+  .localizacao-conteudo {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .localizacao-conteudo > * {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .informacoes-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "dados dados imagem1"
+      "imagem2 . curiosidades";
+    align-items: start;
+  }
+
+  .info-dados { grid-area: dados; }
+  .info-imagem-1 { grid-area: imagem1; }
+  .info-curiosidades { grid-area: curiosidades; }
+  .info-imagem-2 { grid-area: imagem2; }
+}
