@@ -10,46 +10,123 @@
         font-size: 20px;
         padding: 20px;
       }
-      p {
-        margin: 60px 0;
+      li {
+        margin: 30px 0;
+      }
+      li div {
+        margin-top: 10px;
+      }
+      #caixa {
+        display: flex;
+        gap: 10px;
+        height: 200px;
+        margin-top: 10px;
+        padding: 10px;
+        background-color: gray;
+      }
+      .bola {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: orange;
       }
     </style>
   </head>
   <body>
-    <p id="ex1">1. Passa por aqui!</p>
+    <ol>
+      <li id="passa">Passa por aqui!</li>
 
-    <p id="ex2">
-      2. <span id="texto">Pinta-me!</span>
-      <button onclick="pintar('red')">Red</button>
-      <button onclick="pintar('green')">Green</button>
-      <button onclick="pintar('blue')">Blue</button>
-    </p>
+      <li>
+        <span id="frase">Dá-me cor!</span>
+        <div>
+          <button class="color" data-color="orange">Laranja</button>
+          <button class="color" data-color="teal">Turquesa</button>
+          <button class="color" data-color="purple">Roxo</button>
+        </div>
+      </li>
 
-    <p>3. Experimenta escrever... <input id="escrever" type="text" /></p>
+      <li>
+        Experimenta escrever...
+        <div><input id="escrever" type="text" /></div>
+      </li>
 
-    <p>
-      4. Escolha uma cor em inglês:
-      <input id="cor" type="text" />
-      <button id="submeter">submeter</button>
-    </p>
+      <li>
+        Escolha uma cor:
+        <select id="corPagina">
+          <option value="lavender">Lavanda</option>
+          <option value="peachpuff">Pêssego</option>
+          <option value="lightcyan">Gelo</option>
+        </select>
+      </li>
 
-    <p>5. <button id="conta">Conta!</button> <span id="contador">0</span></p>
+      <li><button id="conta">Conta!</button> <span id="contador">0</span></li>
+
+      <li>
+        <form id="formulario">
+          <input
+            id="nome"
+            type="text"
+            placeholder="Insira o seu nome"
+            required
+          />
+          <input
+            id="idade"
+            type="number"
+            placeholder="Insira a sua idade"
+            required
+          />
+          <input type="submit" value="Submit" />
+        </form>
+        <p id="mensagem"></p>
+      </li>
+
+      <li>Automatic Counter: <span id="automatico">0</span></li>
+
+      <li>
+        Contador guardado: <span id="guardado">0</span>
+        <div>
+          <button id="incrementar">+1</button>
+          <button id="decrementar">-1</button>
+          <button id="reset">Reset</button>
+        </div>
+      </li>
+    </ol>
+
+    <section>
+      <h2>Select flex</h2>
+      <select id="direcao">
+        <option value="row">row</option>
+        <option value="row-reverse">row-reverse</option>
+        <option value="column">column</option>
+        <option value="column-reverse">column-reverse</option>
+      </select>
+      <div id="caixa">
+        <div class="bola"></div>
+        <div class="bola"></div>
+        <div class="bola"></div>
+        <div class="bola"></div>
+      </div>
+    </section>
 
     <script>
-      const ex1 = document.getElementById("ex1");
-      ex1.addEventListener("mouseover", () => {
-        ex1.textContent = "1. Obrigado por passares!";
+      const passa = document.querySelector("#passa");
+      passa.addEventListener("mouseover", () => {
+        passa.textContent = "Obrigado por passares!";
       });
-      ex1.addEventListener("mouseout", () => {
-        ex1.textContent = "1. Passa por aqui!";
+      passa.addEventListener("mouseout", () => {
+        passa.textContent = "Passa por aqui!";
       });
 
-      function pintar(cor) {
-        document.getElementById("texto").style.color = cor;
-      }
+      const pintar = (cor) => {
+        document.querySelector("#frase").style.color = cor;
+      };
+
+      document.querySelectorAll("button.color").forEach((botao) => {
+        botao.addEventListener("click", () => pintar(botao.dataset.color));
+      });
 
       const cores = ["lightblue", "khaki", "salmon", "gray"];
-      const escrever = document.getElementById("escrever");
+      const escrever = document.querySelector("#escrever");
       escrever.addEventListener("input", () => {
         const n = escrever.value.length;
         if (n > 0) {
@@ -57,16 +134,59 @@
         }
       });
 
-      document.getElementById("submeter").addEventListener("click", () => {
-        document.body.style.backgroundColor =
-          document.getElementById("cor").value;
-      });
+      document
+        .querySelector("#corPagina")
+        .addEventListener("change", function () {
+          document.body.style.backgroundColor = this.value;
+        });
 
       let total = 0;
-      document.getElementById("conta").addEventListener("click", () => {
+      document.querySelector("#conta").addEventListener("click", () => {
         total++;
-        document.getElementById("contador").textContent = total;
+        document.querySelector("#contador").textContent = total;
       });
+
+      document.querySelector("#formulario").onsubmit = (e) => {
+        e.preventDefault();
+        const nome = document.querySelector("#nome").value;
+        const idade = document.querySelector("#idade").value;
+        document.querySelector("#mensagem").textContent =
+          `Olá, o ${nome} tem ${idade}!`;
+      };
+
+      let segundos = 0;
+      function count() {
+        segundos++;
+        document.querySelector("#automatico").textContent = segundos;
+      }
+      setInterval(count, 1000);
+
+      const guardado = document.querySelector("#guardado");
+      let valor = Number(localStorage.getItem("counter")) || 0;
+      guardado.textContent = valor;
+
+      const atualizar = (novoValor) => {
+        valor = novoValor;
+        guardado.textContent = valor;
+        localStorage.setItem("counter", valor);
+      };
+      const incrementar = () => atualizar(valor + 1);
+      const decrementar = () => atualizar(valor - 1);
+      const reset = () => atualizar(0);
+
+      document
+        .querySelector("#incrementar")
+        .addEventListener("click", incrementar);
+      document
+        .querySelector("#decrementar")
+        .addEventListener("click", decrementar);
+      document.querySelector("#reset").addEventListener("click", reset);
+
+      document
+        .querySelector("#direcao")
+        .addEventListener("change", function () {
+          document.querySelector("#caixa").style.flexDirection = this.value;
+        });
     </script>
   </body>
 </html>
