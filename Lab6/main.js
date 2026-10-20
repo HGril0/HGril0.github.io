@@ -1,17 +1,14 @@
-// A. declaração de variáveis
 
-const nodeInputNumero = document.querySelector("#registar input[type=number]");
-const nodeInputSubmit = document.querySelector("#registar input[type=submit]");
+const nodeInputNumero = document.querySelector("form input[type=number]");
+const nodeInputSubmit = document.querySelector("form input[type=submit]");
 const nodeUlColecao = document.querySelector("#colecao ul");
 const nodeUlRepetidos = document.querySelector("#repetidos ul");
 const nodeTotalColecao = document.querySelector("#colecao span");
 const nodeTotalRepetidos = document.querySelector("#repetidos span");
-const form = document.querySelector("#registar form");
+const form = document.querySelector("form");
 
 const colecao = [];
 const repetidos = [];
-
-// B. event handlers
 
 function guardaCarta() {
   const numero = Number(nodeInputNumero.value);
@@ -76,8 +73,6 @@ function leTudo() {
   }
 }
 
-// C. event listeners
-
 form.onsubmit = (event) => {
   event.preventDefault();
   guardaCarta();
@@ -90,8 +85,6 @@ function ligaBotoesEliminar() {
     botao.onclick = () => eliminaRepetido(Number(botao.dataset.i));
   });
 }
-
-// arranque
 
 leTudo();
 atualizaLista(colecao, nodeUlColecao);
