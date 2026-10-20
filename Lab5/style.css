@@ -1,0 +1,32 @@
+
+Style · CSS
+body {
+  background-color: lavender;
+  font-size: 20px;
+  padding: 20px;
+}
+
+li {
+  margin: 30px 0;
+}
+
+li div {
+  margin-top: 10px;
+}
+
+#caixa {
+  display: flex;
+  gap: 10px;
+  height: 200px;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: gray;
+}
+
+.bola {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: orange;
+}
+

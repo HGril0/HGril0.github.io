@@ -1,36 +1,11 @@
+Index · HTML
 <!doctype html>
 <html lang="pt">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exercícios JavaScript</title>
-    <style>
-      body {
-        background-color: lavender;
-        font-size: 20px;
-        padding: 20px;
-      }
-      li {
-        margin: 30px 0;
-      }
-      li div {
-        margin-top: 10px;
-      }
-      #caixa {
-        display: flex;
-        gap: 10px;
-        height: 200px;
-        margin-top: 10px;
-        padding: 10px;
-        background-color: gray;
-      }
-      .bola {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        background-color: orange;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <ol>
@@ -108,85 +83,8 @@
       </div>
     </section>
 
-    <script>
-      const passa = document.querySelector("#passa");
-      passa.addEventListener("mouseover", () => {
-        passa.textContent = "Obrigado por passares!";
-      });
-      passa.addEventListener("mouseout", () => {
-        passa.textContent = "Passa por aqui!";
-      });
-
-      const pintar = (cor) => {
-        document.querySelector("#frase").style.color = cor;
-      };
-
-      document.querySelectorAll("button.color").forEach((botao) => {
-        botao.addEventListener("click", () => pintar(botao.dataset.color));
-      });
-
-      const cores = ["lightblue", "khaki", "salmon", "gray"];
-      const escrever = document.querySelector("#escrever");
-      escrever.addEventListener("input", () => {
-        const n = escrever.value.length;
-        if (n > 0) {
-          escrever.style.backgroundColor = cores[(n - 1) % cores.length];
-        }
-      });
-
-      document
-        .querySelector("#corPagina")
-        .addEventListener("change", function () {
-          document.body.style.backgroundColor = this.value;
-        });
-
-      let total = 0;
-      document.querySelector("#conta").addEventListener("click", () => {
-        total++;
-        document.querySelector("#contador").textContent = total;
-      });
-
-      document.querySelector("#formulario").onsubmit = (e) => {
-        e.preventDefault();
-        const nome = document.querySelector("#nome").value;
-        const idade = document.querySelector("#idade").value;
-        document.querySelector("#mensagem").textContent =
-          `Olá, o ${nome} tem ${idade}!`;
-      };
-
-      let segundos = 0;
-      function count() {
-        segundos++;
-        document.querySelector("#automatico").textContent = segundos;
-      }
-      setInterval(count, 1000);
-
-      const guardado = document.querySelector("#guardado");
-      let valor = Number(localStorage.getItem("counter")) || 0;
-      guardado.textContent = valor;
-
-      const atualizar = (novoValor) => {
-        valor = novoValor;
-        guardado.textContent = valor;
-        localStorage.setItem("counter", valor);
-      };
-      const incrementar = () => atualizar(valor + 1);
-      const decrementar = () => atualizar(valor - 1);
-      const reset = () => atualizar(0);
-
-      document
-        .querySelector("#incrementar")
-        .addEventListener("click", incrementar);
-      document
-        .querySelector("#decrementar")
-        .addEventListener("click", decrementar);
-      document.querySelector("#reset").addEventListener("click", reset);
-
-      document
-        .querySelector("#direcao")
-        .addEventListener("change", function () {
-          document.querySelector("#caixa").style.flexDirection = this.value;
-        });
-    </script>
+    <script src="main.js"></script>
   </body>
 </html>
+
+Claude terminou a resposta
