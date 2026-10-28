@@ -1,0 +1,15 @@
+#produtos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+article {
+  background-color: #f4f4f4;
+  padding: 16px;
+  width: 280px;
+}
+
+article img {
+  width: 100%;
+}
