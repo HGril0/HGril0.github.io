@@ -29,7 +29,7 @@ function criarProduto(produto) {
 // C. Event handlers
 function renderizarProdutos(produtos) {
   produtos.forEach(produto => {
-    console.log(produto.title);
+    const article = criarProduto(produto);
     secaoProdutos.append(article);
   });
 }
