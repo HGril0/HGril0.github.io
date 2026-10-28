@@ -1,6 +1,10 @@
 // A. Estado e variáveis com referência de elementos do DOM
 const secaoProdutos = document.querySelector("#produtos");
+const secaoCesto = document.querySelector("#cesto");
 
+if (!localStorage.getItem("produtos-selecionados")) {
+  localStorage.setItem("produtos-selecionados", JSON.stringify([]));
+}
 
 // B. Funções utilitárias
 function criarProduto(produto) {
@@ -22,7 +26,15 @@ function criarProduto(produto) {
   const rating = document.createElement("p");
   rating.textContent = `Rating: ${produto.rating.rate} (${produto.rating.count} avaliações)`;
 
-  article.append(titulo, imagem, descricao, preco, rating);
+  const botao = document.createElement("button");
+  botao.textContent = "+ Adicionar ao cesto";
+
+  botao.addEventListener("click", () => {
+  const lista = JSON.parse(localStorage.getItem("produtos-selecionados"));
+  lista.push(produto);
+  localStorage.setItem("produtos-selecionados", JSON.stringify(lista));
+});
+  article.append(titulo, imagem, descricao, preco, rating, botao);
 
   return article;
 }
